@@ -13,6 +13,7 @@ module.exports = (gulp) => {
 
   [
     'build',
+    'copy-fonts',
     'lint',
     'jekyll',
     'optimize-css',
