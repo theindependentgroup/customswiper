@@ -13,6 +13,7 @@ image:
     {% for project in sorted %}
       {% if project.publish %}
         <div class="swiper-slide" data-hash="{{ project.hash }}">
+          <img src="{{ project.image }}" />
           <h2 class="absolute bottom-0">{{ project.title }}</h2>
         </div>
       {% endif %}
