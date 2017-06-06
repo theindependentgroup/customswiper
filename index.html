@@ -4,21 +4,31 @@ layout: default
 image:
 ---
 
-<h1>{{ site.title }}</h1>
+<h1 class="f1 white shadow absolute z-2">{{ site.title }}</h1>
 
 <!-- Swiper -->
-<div class="swiper-container absolute absolute--fill">
+<div class="swiper-projects swiper-container absolute absolute--fill">
   <div class="swiper-wrapper">
     {% assign sorted = site.projects | sort:"position" %}
     {% for project in sorted %}
       {% if project.publish %}
         <div class="swiper-slide" data-hash="{{ project.hash }}">
-          <img src="{{ project.image }}" />
-          <h2 class="absolute bottom-0">{{ project.title }}</h2>
+
+          <div class="swiper-{{ project.hash }} swiper-container absolute absolute--fill">
+            <div class="swiper-wrapper">
+              {% for image in project.slides %}
+              <div class="swiper-slide">
+                <img class="h-100" src="{{ image }}" />
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+
+          <h2 class="f2 white shadow absolute bottom-0">{{ project.title }}</h2>
         </div>
       {% endif %}
     {% endfor %}
   </div>
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
+  <!-- <div class="swiper-button-prev"></div> -->
+  <!-- <div class="swiper-button-next"></div> -->
 </div>
