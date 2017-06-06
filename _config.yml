@@ -1,18 +1,21 @@
 ---
 ##### seo #####
-title: DV Jekyll boilerplate
-description:
+title: The Independent Group
+description: > The Independent Group (US) is a multidisciplinary design practice
+               that collaborates with a diverse group of individuals, groups,
+               organizations, and commercial clients to create distinctive work
+               that establishes meaningful, lasting connections with their audiences.
+               We are dedicated to forward-thinking initiatives that promote education,
+               sustainability, and positive social impact.
 url:
 twitter:
-  username: _defaultvalue
+  username:
 logo:
 social:
-  name: Default Value
+  name: The Independent Group
   links:
-    - https://twitter.com/_defaultvalue
-    - https://www.facebook.com/_defaultvalue
-    - https://www.linkedin.com/company-beta/11151394/
-    - https://github.com/default-value
+    - https://www.instagram.com/theindependentgroup/
+    - https://github.com/theindependentgroup
 webmaster_verifications:
   google: 1234
   bing: 1234
