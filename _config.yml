@@ -29,6 +29,11 @@ timezone: America/New_York
 
 ##### defaults #####
 
+##### collections #####
+collections:
+  projects:
+    title: Projects
+    output: false
 ##### jekyll #####
 permalink: pretty
 exclude:
