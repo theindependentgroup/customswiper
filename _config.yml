@@ -1,12 +1,13 @@
 ---
 ##### seo #####
 title: The Independent Group
-description: > The Independent Group (US) is a multidisciplinary design practice
-               that collaborates with a diverse group of individuals, groups,
-               organizations, and commercial clients to create distinctive work
-               that establishes meaningful, lasting connections with their audiences.
-               We are dedicated to forward-thinking initiatives that promote education,
-               sustainability, and positive social impact.
+description: >
+             The Independent Group (US) is a multidisciplinary design practice
+             that collaborates with a diverse group of individuals, groups,
+             organizations, and commercial clients to create distinctive work
+             that establishes meaningful, lasting connections with their audiences.
+             We are dedicated to forward-thinking initiatives that promote education,
+             sustainability, and positive social impact.
 url:
 twitter:
   username:
@@ -34,6 +35,7 @@ collections:
   projects:
     title: Projects
     output: false
+
 ##### jekyll #####
 permalink: pretty
 exclude:
