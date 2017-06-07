@@ -38,6 +38,8 @@ $black: #000000;
 $black70: rgba(0,0,0,0.7);
 $light-grey: #D8D8D8;
 $brand: #3152E5;
+$brand70: rgba(49,82,229,0.7);
+$brand90: rgba(49,82,229,0.9);
 
 // Color Palette
 $color-palette: (
@@ -45,5 +47,7 @@ $color-palette: (
   black: $black,
   black70: $black70,
   light-grey: $light-grey,
-  brand: $brand
+  brand: $brand,
+  brand70: $brand70,
+  brand90: $brand90
 );

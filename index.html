@@ -4,7 +4,11 @@ layout: default
 image:
 ---
 
-<h1 class="f1 fw9 white shadow absolute z-2">{{ site.title }}</h1>
+<a href="#about">
+  <h1 class="ma6 top-0 left-0 f1 fw9 white grow shadow absolute z-2">
+    {{ site.title }}
+  </h1>
+</a>
 
 <!-- Swiper -->
 <div class="swiper-projects swiper-container absolute absolute--fill">
@@ -25,9 +29,9 @@ image:
             <div class="swiper-pagination"></div>
           </div>
 
-          <div class="bg-black70 absolute bottom-0 left-0 right-0 z-2">
-            <h2 class="f2 fw7 white shadow">{{ project.title }}</h2>
-            <p class="white shadow measure">{{ project.description }}</p>
+          <div class=" ph6 pv3 bg-brand70 absolute bottom-0 left-0 right-0 z-2">
+            <h2 class="mh0 mt0 mb1 f2 fw7 white shadow">{{ project.title }}</h2>
+            <p class="ma0 white shadow measure-wide">{{ project.description }}</p>
           </div>
         </div>
       {% endif %}
@@ -35,4 +39,9 @@ image:
   </div>
   <!-- <div class="swiper-button-prev"></div> -->
   <!-- <div class="swiper-button-next"></div> -->
+</div>
+
+<!-- About Modal -->
+
+<div id="about" class="absolute absolute--fill bg-brand90 z-1 dn">
 </div>
