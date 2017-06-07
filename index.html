@@ -4,7 +4,7 @@ layout: default
 image:
 ---
 
-<h1 class="f1 white shadow absolute z-2">{{ site.title }}</h1>
+<h1 class="f1 fw9 white shadow absolute z-2">{{ site.title }}</h1>
 
 <!-- Swiper -->
 <div class="swiper-projects swiper-container absolute absolute--fill">
@@ -25,7 +25,10 @@ image:
             <div class="swiper-pagination"></div>
           </div>
 
-          <h2 class="f2 white shadow absolute bottom-0">{{ project.title }}</h2>
+          <div class="bg-black70 absolute bottom-0 left-0 right-0 z-2">
+            <h2 class="f2 fw7 white shadow">{{ project.title }}</h2>
+            <p class="white shadow measure">{{ project.description }}</p>
+          </div>
         </div>
       {% endif %}
     {% endfor %}

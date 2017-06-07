@@ -35,6 +35,7 @@ $measure-4: 50em;
 // Color Definitions
 $white: #FFFFFF;
 $black: #000000;
+$black70: rgba(0,0,0,0.7);
 $light-grey: #D8D8D8;
 $brand: #3152E5;
 
@@ -42,6 +43,7 @@ $brand: #3152E5;
 $color-palette: (
   white: $white,
   black: $black,
+  black70: $black70,
   light-grey: $light-grey,
   brand: $brand
 );
