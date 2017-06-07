@@ -22,14 +22,18 @@ image:
             <div class="swiper-wrapper">
               {% for image in project.slides %}
               <div class="swiper-slide">
-                <img class="h-100" src="{{ image }}" />
+                <img class="vh-100 w-100 obj-fit" src="{{ image }}" />
+                <div class="h-15 w-100 bg-white ty--1"></div>
+                <div class="h-15 w-100 overflow-hidden ty--2 relative">
+                  <img class="vh-100 w-100 blur obj-fit absolute bottom-0" src="{{ image }}" />
+                </div>
               </div>
               {% endfor %}
             </div>
             <div class="swiper-pagination"></div>
           </div>
 
-          <div class=" ph6 pv3 bg-brand70 absolute bottom-0 left-0 right-0 z-2">
+          <div class=" ph6 pv3 absolute bottom-0 left-0 right-0 z-2">
             <h2 class="mh0 mt0 mb1 f2 fw7 white shadow">{{ project.title }}</h2>
             <p class="ma0 white shadow measure-wide">{{ project.description }}</p>
           </div>
