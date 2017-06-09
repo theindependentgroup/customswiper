@@ -21,7 +21,7 @@ module.exports = (gulp, shared) => {
   gulp.task('optimize:css', () => {
     const crunchCss = shared.env === 'production';
     const postcssPlugins = [
-      uncss(configUncss),  // remove any extra css
+    //  uncss(configUncss),  // remove any extra css, temporarily removed uncss
       cssnano()  // minify css
     ];
 
