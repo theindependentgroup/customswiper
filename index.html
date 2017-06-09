@@ -20,12 +20,12 @@ image:
 
           <div class="swiper-{{ project.hash }} swiper-container absolute absolute--fill">
             <div class="swiper-wrapper">
-              {% for image in project.slides %}
+              {% for slide in project.slides %}
               <div class="swiper-slide">
-                <img class="vh-100 w-100 obj-fit" src="{{ image }}" />
+                <img class="vh-100 w-100 obj-fit" src="{{ slide.image }}" />
                 <div class="hover-target h20 w-100 bg-white ty--1 o-0"></div>
                 <div class="hover-target h20 w-100 overflow-hidden ty--2 relative o-0">
-                  <img class="vh-100 w-100 blur obj-fit absolute bottom-0" src="{{ image }}" />
+                  <img class="vh-100 w-100 blur obj-fit absolute bottom-0" src="{{ slide.image }}" />
                 </div>
               </div>
               {% endfor %}
