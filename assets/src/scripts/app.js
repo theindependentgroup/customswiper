@@ -4,7 +4,6 @@
  */
 
 var mainSwiper = new Swiper ('.swiper-projects', {
-  direction: 'vertical',
   keyboardControl: true,
   hashnav: true,
   hashnavWatchState: false
@@ -20,6 +19,7 @@ for (var i = 0; i < eachProj.length; i++) {
    var cleanName = name.replace(/-/g,"");
 
    window[cleanName + "Swiper"] = new Swiper ('.'+name, {
+     direction: 'vertical',
      keyboardControl: true,
      nextButton: '.'+name+'-next',
      prevButton: '.'+name+'-prev',
