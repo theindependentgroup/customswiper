@@ -23,25 +23,26 @@ image:
               {% for slide in project.slides %}
               <div class="swiper-slide">
                 <img class="vh-100 w-100 obj-fit" src="{{ slide.image }}" />
-                <div class="hover-target h20 w-100 bg-white ty--1 o-0"></div>
-                <div class="hover-target h20 w-100 overflow-hidden ty--2 relative o-0">
-                  <img class="vh-100 w-100 blur obj-fit absolute bottom-0" src="{{ slide.image }}" />
+                <!-- arrows -->
+                <div class="absolute top-0 bottom-0 left-0 w-25 z-2 hide-child">
+                  <div class="grow swiper-{{ project.hash }}-prev swiper-button-prev child"></div>
                 </div>
-                <div class="hover-box ph6 pv3 absolute bottom-0 left-0 right-0 z-3 hide-child">
-                  <h2 class="mh0 mt0 mb1 f2 fw7 white shadow child">{{ slide.title }}</h2>
-                  <p class="ma0 white shadow measure-wide child">{{ slide.caption }}</p>
+                <div class="absolute top-0 bottom-0 right-0 w-25 z-2 hide-child">
+                  <div class="grow swiper-{{ project.hash }}-next swiper-button-next child"></div>
+                </div>
+
+                <div class="hover-box ph6 pv3 h10 relative ty--1 bottom-0 left-0 right-0 z-3 hide-child overflow-hidden">
+                  <!-- bg -->
+                  <div class="child absolute absolute--fill bg-light-grey"></div>
+                  <img class="child vh-100 w-100 blur obj-fit absolute bottom-0 left-0 right-0" src="{{ slide.image }}" />
+                  <!-- description -->
+                  <h2 class="mh0 mt0 mb1 f2 fw7 white shadow relative z-1">{{ slide.title }}</h2>
+                  <p class="child ma0 white shadow measure-wide relative z-1">{{ slide.caption }}</p>
                 </div>
               </div>
               {% endfor %}
             </div>
             <div class="swiper-pagination ma6 top-0 right-0 f2 white shadow hide"></div>
-          </div>
-
-          <div class="absolute top-0 bottom-0 left-0 w-25 z-2 hide-child">
-            <div class="grow swiper-{{ project.hash }}-prev swiper-button-prev child"></div>
-          </div>
-          <div class="absolute top-0 bottom-0 right-0 w-25 z-2 hide-child">
-            <div class="grow swiper-{{ project.hash }}-next swiper-button-next child"></div>
           </div>
         </div>
       {% endif %}

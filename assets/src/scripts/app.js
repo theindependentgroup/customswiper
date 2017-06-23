@@ -76,20 +76,20 @@ var resetAllNe = function() {
 }
 
 
-var hoverBoxes = document.getElementsByClassName('hover-box');
-var hoverTargets = document.getElementsByClassName('hover-target');
-
-for (var i = 0; i < hoverBoxes.length; i++) {
-  hoverBoxes[i].addEventListener('mouseenter', function() {
-    console.log('in!');
-    for (var j = 0; j < hoverTargets.length; j++) {
-      hoverTargets[j].classList.remove('o-0');
-    }
-  });
-  hoverBoxes[i].addEventListener('mouseleave', function() {
-    console.log('out!');
-    for (var j = 0; j < hoverTargets.length; j++) {
-      hoverTargets[j].classList.add('o-0');
-    }
-  });
-}
+// var hoverBoxes = document.getElementsByClassName('hover-box');
+// var hoverTargets = document.getElementsByClassName('hover-target');
+//
+// for (var i = 0; i < hoverBoxes.length; i++) {
+//   hoverBoxes[i].addEventListener('mouseenter', function() {
+//     console.log('in!');
+//     for (var j = 0; j < hoverTargets.length; j++) {
+//       hoverTargets[j].classList.remove('o-0');
+//     }
+//   });
+//   hoverBoxes[i].addEventListener('mouseleave', function() {
+//     console.log('out!');
+//     for (var j = 0; j < hoverTargets.length; j++) {
+//       hoverTargets[j].classList.add('o-0');
+//     }
+//   });
+// }

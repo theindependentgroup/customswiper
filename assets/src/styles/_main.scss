@@ -30,6 +30,11 @@
 .right-3 { right: 3rem; }
 .left-3 { left: 3rem; }
 
+.hover-box:hover {
+  height: initial;
+}
+
+
 // modal
 .modal {
   opacity: 0;
