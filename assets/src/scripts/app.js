@@ -25,39 +25,27 @@ for (var i = 0; i < eachProj.length; i++) {
      prevButton: '.'+name+'-prev',
      pagination: '.swiper-pagination',
      paginationType: 'fraction',
-     loop: true
+     loop: false
    });
-   //console.log(cleanName);
-   //console.log(name);
-   console.log( '.'+name+'-next' );
 
-  //  eval(cleanName + "Swiper.on('onSlideNextStart', function () { \
-  //    var test = " + cleanName + "Swiper.isEnd; \
-  //    console.log(test); \
-  //  })");
+  // eval(cleanName + "Swiper.on('onSlideNextStart', function () { \
+  //   var test = " + cleanName + "Swiper.isEnd; \
+  //   if (test) { \
+  //     mainSwiper.slideNext(false); \
+  //     resetAllNe(); \
+  //     console.log(test); \
+  //   } \
+  // })");
   //
-  eval(cleanName + "Swiper.on('onSlideNextStart', function () { \
-    var test = " + cleanName + "Swiper.isEnd; \
-    if (test) { \
-      mainSwiper.slideNext(false); \
-      resetAllNe(); \
-      console.log(test); \
-    } \
-  })");
+  // eval(cleanName + "Swiper.on('onSlidePrevStart', function () { \
+  //   var test = " + cleanName + "Swiper.isBeginning; \
+  //   if (test) { \
+  //     mainSwiper.slidePrev(false); \
+  //     resetAllPr(); \
+  //     console.log(test); \
+  //   } \
+  // })");
 
-  eval(cleanName + "Swiper.on('onSlidePrevStart', function () { \
-    var test = " + cleanName + "Swiper.isBeginning; \
-    if (test) { \
-      mainSwiper.slidePrev(false); \
-      resetAllPr(); \
-      console.log(test); \
-    } \
-  })");
-
-  // window[cleanName + "Swiper"].on('onSlideNextStart', function () {
-  //   var test = window[cleanName + "Swiper"].container;
-  //   console.log(test);
-  //  });
 }
 
 
