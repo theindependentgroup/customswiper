@@ -3,7 +3,10 @@ const webpack = require('webpack');
 
 let config = {
   context: __dirname,
-  entry: ['./assets/src/scripts/app.js'],
+  entry: [
+    './assets/src/scripts/vendor/swiper.js',
+    './assets/src/scripts/app.js'
+  ],
   output: {
     path: __dirname,
     publicPath: '/',
