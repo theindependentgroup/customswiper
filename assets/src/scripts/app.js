@@ -5,11 +5,9 @@
 
 var mainSwiper = new Swiper ('.swiper-projects', {
   direction: 'vertical',
-  //  nextButton: '.swiper-button-next',
-  //  prevButton: '.swiper-button-prev',
   keyboardControl: true,
   hashnav: true,
-  hashnavWatchState: true
+  hashnavWatchState: false
 })
 
 
@@ -23,13 +21,15 @@ for (var i = 0; i < eachProj.length; i++) {
 
    window[cleanName + "Swiper"] = new Swiper ('.'+name, {
      keyboardControl: true,
+     nextButton: '.'+name+'-next',
+     prevButton: '.'+name+'-prev',
      pagination: '.swiper-pagination',
      paginationType: 'fraction',
      loop: true
    });
    //console.log(cleanName);
    //console.log(name);
-   console.log( eval(cleanName + "Swiper") );
+   console.log( '.'+name+'-next' );
 
   //  eval(cleanName + "Swiper.on('onSlideNextStart', function () { \
   //    var test = " + cleanName + "Swiper.isEnd; \
@@ -85,4 +85,23 @@ var resetAllNe = function() {
      eval(cleanName + "Swiper.slideTo(1,1,0)" );
 
    }
+}
+
+
+var hoverBoxes = document.getElementsByClassName('hover-box');
+var hoverTargets = document.getElementsByClassName('hover-target');
+
+for (var i = 0; i < hoverBoxes.length; i++) {
+  hoverBoxes[i].addEventListener('mouseenter', function() {
+    console.log('in!');
+    for (var j = 0; j < hoverTargets.length; j++) {
+      hoverTargets[j].classList.remove('o-0');
+    }
+  });
+  hoverBoxes[i].addEventListener('mouseleave', function() {
+    console.log('out!');
+    for (var j = 0; j < hoverTargets.length; j++) {
+      hoverTargets[j].classList.add('o-0');
+    }
+  });
 }
