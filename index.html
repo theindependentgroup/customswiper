@@ -30,7 +30,13 @@ image:
                 <div class="absolute top-0 bottom-0 right-0 w-25 z-2 hide-child">
                   <div class="grow swiper-{{ project.hash }}-next swiper-button-next child"></div>
                 </div>
-
+                <!-- main arrows -->
+                <div class="absolute top-0 bottom-0 left-0 w-25 z-2 hide-child m-prev main-hide">
+                  <div class="grow main-prev swiper-button-prev child"></div>
+                </div>
+                <div class="absolute top-0 bottom-0 right-0 w-25 z-2 hide-child m-next main-hide">
+                  <div class="grow main-next swiper-button-next child"></div>
+                </div>
                 <div class="hover-box ph6 pv3 h10 relative ty--1 bottom-0 left-0 right-0 z-3 hide-child overflow-hidden">
                   <!-- bg -->
                   <div class="child absolute absolute--fill bg-light-grey"></div>
@@ -53,11 +59,11 @@ image:
 <!-- About Modal -->
 
 <div id="about" class="absolute absolute--fill bg-brand90 z-1 modal pa6 overflow-auto">
-  <a href="#" class="absolute right-3 top-3 grow shadow white">
+  <a href="#" class="fixed right-3 top-3 grow shadow white">
     <img src="assets/images/close.svg" alt="">
   </a>
-  <div class="mt12 container white flex">
-    <div class="measure-extra-wide">
+  <div class="mt12 container white lh-2 flex flex-column flex-row-md">
+    <div class="mr2-md mr4-lg measure-extra-wide">
       <h2 class="f3">Profile</h2>
       <p class="">The Independent Group (US) is a multidisciplinary design practice that collaborates with a diverse group of individuals, groups, organizations, and commercial clients to create distinctive work that establishes meaningful, lasting connections with their audiences. We are dedicated to forward-thinking initiatives that promote education, sustainability, and positive social impact.</p>
 
@@ -68,7 +74,7 @@ image:
       <h2 class="f3">The Name</h2>
       <p class="">The Independent Group (UK) consisted of artists, architects, writers, and critics that met and collaborated informally in London from 1952–55. Together they explored a range of concerns, including questioning dominant Modernist thought and the role of waste in popular culture. Their approach was inclusive and multi-disciplinary, and the influences they drew upon were diverse. It is this spirit that guides our approach: We are invested in making collaborative work that is innovative, timely, and has a lasting impact.</p>
     </div>
-    <div>
+    <div class="ml2-md ml4-lg">
       <h2 class="f3">Contact</h2>
       <p>2 North Main Street<br>
         Beacon Falls, CT 06403<br>
@@ -80,7 +86,7 @@ image:
       </p>
 
       <h2 class="f3">Selected Clients</h2>
-        <ul class="list">
+        <ul class="list pa0">
           <li>Bonobos</li>
           <li>Brown University</li>
           <li>Center for Court Innovation</li>
@@ -103,7 +109,7 @@ image:
           <li>The Wassaic Project</li>
         </ul>
       <h2 class="f3">Recognition and Awards</h2>
-      <ul class="list">
+      <ul class="list pa0">
         <li>Advertising Age</li>
         <li>American Institute of Graphic Arts</li>
         <li>American Institute of Landscape Architects</li>

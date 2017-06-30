@@ -3,12 +3,13 @@
  * and bundled using Webpack.
  */
 
-var mainSwiper = new Swiper ('.swiper-projects', {
-  keyboardControl: true,
-  hashnav: true,
-  hashnavWatchState: false
-})
-
+ var mainSwiper = new Swiper ('.swiper-projects', {
+   keyboardControl: true,
+   hashnav: true,
+   hashnavWatchState: false,
+   nextButton: '.main-next',
+   prevButton: '.main-prev', 
+  })
 
 // iterate through each project and initiate Swipers
 var main = document.getElementsByClassName('swiper-projects');
@@ -28,14 +29,43 @@ for (var i = 0; i < eachProj.length; i++) {
      loop: false
    });
 
-  // eval(cleanName + "Swiper.on('onSlideNextStart', function () { \
-  //   var test = " + cleanName + "Swiper.isEnd; \
-  //   if (test) { \
-  //     mainSwiper.slideNext(false); \
-  //     resetAllNe(); \
-  //     console.log(test); \
-  //   } \
-  // })");
+  //  eval(cleanName + "Swiper.on('onReachEnd', function () { \
+  //   console.log(mainSwiper); \
+  //   console.log(mainSwiper.params.nextButton = '.'+name+'-next'); \
+  //  })");
+
+  eval(cleanName + "Swiper.on('onSlideChangeStart', function () { \
+    var isBeginning = " + cleanName + "Swiper.isBeginning; \
+    var isEnd = " + cleanName + "Swiper.isEnd; \
+    var mPrevs = document.getElementsByClassName('m-prev'); \
+    var mNexts = document.getElementsByClassName('m-next'); \
+    if (isBeginning) { \
+      for (i = 0; i < mPrevs.length; i++) { \
+        mPrevs[i].classList.remove('main-hide'); \
+      } \
+      for (var i = 0; i < mNexts.length; i++ ) { \
+        mNexts[i].classList.add('main-hide'); \
+      } \
+      console.log('first slide'); \
+    } else if (isEnd){ \
+      for (i = 0; i < mPrevs.length; i++) { \
+        mPrevs[i].classList.add('main-hide'); \
+      } \
+      for (var i = 0; i < mNexts.length; i++) { \
+        mNexts[i].classList.remove('main-hide'); \
+      } \
+      console.log('last slide'); \
+    } else { \
+      for (i = 0; i < mPrevs.length; i++) { \
+        mPrevs[i].classList.add('main-hide'); \
+      } \
+      for (var i = 0; i < mNexts.length; i++) { \
+        mNexts[i].classList.add('main-hide'); \
+      } \
+      console.log('middle slide'); \
+    }\
+  })");
+
   //
   // eval(cleanName + "Swiper.on('onSlidePrevStart', function () { \
   //   var test = " + cleanName + "Swiper.isBeginning; \
@@ -45,8 +75,30 @@ for (var i = 0; i < eachProj.length; i++) {
   //     console.log(test); \
   //   } \
   // })");
-
 }
+
+mainSwiper.on('onSlidePrevStart', function() {
+  resetAllPr();
+})
+mainSwiper.on('onSlideNextStart', function() {
+  resetAllNe();
+  console.log('nextslide');
+})
+
+// document.onclick = function(event) {
+//   var el = event.target;
+//
+//   var name = el.classList[1]
+//   var cleanName = name.replace(/-/g,"");
+//   cleanName = cleanName.replace(/prev/g,"");
+//   cleanName = cleanName.replace(/next/g,"");
+//
+//   if (el.classList.contains('swiper-button-disabled')) {
+//     eval("console.log(" + cleanName + "Swiper.isBeginning)");
+//     eval("console.log(" + cleanName + "Swiper.isEnd)");
+//     console.log("---clicked---");
+//   }
+// }
 
 
 var resetAllPr = function() {
@@ -56,9 +108,8 @@ var resetAllPr = function() {
      var classes = eachProj[i].children[0].classList;
      var name = classes[0]
      var cleanName = name.replace(/-/g,"");
-
-     eval(cleanName + "Swiper.slideTo(0,1,0)" );
-
+     var le = eval( cleanName + "Swiper.slides.length" );
+     eval(cleanName + "Swiper.slideTo(" + le + ",0)" );
    }
 }
 
@@ -69,27 +120,6 @@ var resetAllNe = function() {
      var classes = eachProj[i].children[0].classList;
      var name = classes[0]
      var cleanName = name.replace(/-/g,"");
-
-     eval(cleanName + "Swiper.slideTo(1,1,0)" );
-
+     eval(cleanName + "Swiper.slideTo(0,0)" );
    }
 }
-
-
-// var hoverBoxes = document.getElementsByClassName('hover-box');
-// var hoverTargets = document.getElementsByClassName('hover-target');
-//
-// for (var i = 0; i < hoverBoxes.length; i++) {
-//   hoverBoxes[i].addEventListener('mouseenter', function() {
-//     console.log('in!');
-//     for (var j = 0; j < hoverTargets.length; j++) {
-//       hoverTargets[j].classList.remove('o-0');
-//     }
-//   });
-//   hoverBoxes[i].addEventListener('mouseleave', function() {
-//     console.log('out!');
-//     for (var j = 0; j < hoverTargets.length; j++) {
-//       hoverTargets[j].classList.add('o-0');
-//     }
-//   });
-// }
