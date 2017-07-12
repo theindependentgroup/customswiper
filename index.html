@@ -5,7 +5,7 @@ image:
 ---
 
 <a href="#about">
-  <h1 class="ma4 top-0 left-0 f1 fw9 white grow shadow absolute z-2">
+  <h1 class="ph4 mv4 mh0 top-0 left-0 w-100 w-auto-sm f2 f1-sm fw9 tc white grow shadow absolute z-2">
     {{ site.title }}
   </h1>
 </a>
@@ -37,18 +37,37 @@ image:
                 <div class="absolute top-0 bottom-0 right-0 w-25 z-2 hide-child m-next main-hide">
                   <div class="grow main-next swiper-button-next child"></div>
                 </div>
-                <div class="hover-box ph4 pv3 h10 relative ty--1 bottom-0 left-0 right-0 z-3 hide-child overflow-hidden">
+                <!-- hide-on-mobile -->
+                <div class="hover-box ph4 pv3 h10 relative ty--1 bottom-0 left-0 right-0 z-3 hide-child overflow-hidden dn db-sm lh-2">
                   <!-- bg -->
                   <div class="child absolute absolute--fill bg-light-grey"></div>
+                  <img class="child vh-100 w-100 blur obj-fit absolute bottom-0 left-0 right-0 s1" src="{{ slide.image }}" />
                   <img class="child vh-100 w-100 blur obj-fit absolute bottom-0 left-0 right-0" src="{{ slide.image }}" />
                   <!-- description -->
-                  <h2 class="mh0 mt0 mb1 f4 fw7 white shadow relative z-1">{{ slide.title }}</h2>
+                  <h2 class="mh0 mt0 mb1 f4 fw7 white shadow relative z-1 tracked-mini">{{ slide.title }}</h2>
                   <p class="child ma0 f4 white shadow measure-wide relative z-1">{{ slide.caption }}</p>
                 </div>
+                <!-- mobile -->
+                <label for="{{ project.hash }}-{{ forloop.index }}" class="absolute link bottom-0 btn-center mv4 f4 fw7 white shadow relative z-1 tracked-mini dn-sm">Project Info</label>
+                <input class="modal-state" id="{{ project.hash }}-{{ forloop.index }}" type="checkbox" />
+                <div class="modal-container dn-sm">
+                  <label for="{{ project.hash }}-{{ forloop.index }}" class="absolute absolute--fill z-1"></label>
+                  <div class="ph4 pv3 relative ty--1 bottom-0 left-0 right-0 z-3 overflow-hidden lh-2">
+                    <!-- bg -->
+                    <div class="absolute absolute--fill bg-light-grey"></div>
+                    <img class="vh-100 w-100 blur obj-fit absolute bottom-0 left-0 right-0 s1" src="{{ slide.image }}" />
+                    <img class="vh-100 w-100 blur obj-fit absolute bottom-0 left-0 right-0" src="{{ slide.image }}" />
+                    <!-- description -->
+                    <h2 class="mh0 mt0 mb1 f4 fw7 white shadow relative z-1 tracked-mini">{{ slide.title }}</h2>
+                    <p class="mt0 mb2 f4 white shadow measure-wide relative z-1">{{ slide.caption }}</p>
+                    <label for="{{ project.hash }}-{{ forloop.index }}" class="link f4 fw7 white shadow relative z-1 tracked-mini">close</label>
+                  </div>
+                </div>
+
               </div>
               {% endfor %}
             </div>
-            <div class="swiper-pagination ma4 top-0 right-0 f2 white shadow hide"></div>
+            <div class="swiper-pagination ma4 top-0 right-0 f2 white shadow hide dn db-sm"></div>
           </div>
         </div>
       {% endif %}
@@ -59,33 +78,36 @@ image:
 <!-- About Modal -->
 
 <div id="about" class="absolute absolute--fill bg-brand90 z-1 modal pa4 overflow-auto">
-  <a href="#" class="fixed right-3 top-3 grow shadow white">
-    <img src="assets/images/close.svg" alt="">
+  <a href="#" class="fixed right-0 top-0 ma4 grow shadow white dn db-sm">
+    <img class="w-50 w-100-sm" src="assets/images/close.svg" alt="">
   </a>
-  <div class="mt12 container white lh-2 flex flex-column flex-row-md">
+  <a href="#" class="fixed btn-center bottom-2 grow white dn-sm link brand bg-white ph3 pv1">
+    close
+  </a>
+  <div class="mt8 mt12-sm container white lh-2 flex flex-column flex-row-md">
     <div class="mr2-md mr4-lg measure-extra-wide">
-      <h2 class="f3">Profile</h2>
+      <h2 class="f3 mb0">Profile</h2>
       <p class="">The Independent Group (US) is a multidisciplinary design practice that collaborates with a diverse group of individuals, groups, organizations, and commercial clients to create distinctive work that establishes meaningful, lasting connections with their audiences. We are dedicated to forward-thinking initiatives that promote education, sustainability, and positive social impact.</p>
 
-      <h2 class="f3">Principal</h2>
+      <h2 class="f3 mb0">Principal</h2>
       <p class="">Isaac Gertman is designer, writer, educator, and typography enthusiast, with a keen interest in the overlapping social, cultural, and infrastructural systems found in cities. He has experience in the strategic planning, design, and production of editorial and brand identity systems, websites, publications, printed ephemera, motion graphics, wayfinding systems, and exhibitions. In addition to providing creative and design direction to the clients of The Independent Group, he is Design Director of Terreform, an urban research and advocacy center that investigates the forms, policies, technologies, and practices that will yield equitable, sustainable, and beautiful cities for our urbanizing planet.</p>
       <p class="">As a faculty member of the Maryland Institute College of Art, he teaches advanced courses in Graphic Design, Typography, Branding, and Publication Design. In 2015, he won the prestigious MICA Trustees Fellowship Award for Excellence in Teaching. He previously taught at Parsons, the New School for Design; City College of New York, in the Graduate Department of Landscape Architecture; and Rhode Island School of Design.</p>
       <p class="">His work has been recognized by the Advertising Age, American Institute of Graphic Arts, Society of Publication Designers, the American Society of Landscape Architects, and has been featured in numerous books and blogs. His writing has appeared in Print magazine, Step magazine, DesignBureau, and the design blog SpeakUp. Isaac received an MFA from the Rhode Island School of Design, a BFA from the Maryland Institute College of Art, and is currently pursuing a masters degree in user experience design.</p>
-      <h2 class="f3">The Name</h2>
+      <h2 class="f3 mb0">The Name</h2>
       <p class="">The Independent Group (UK) consisted of artists, architects, writers, and critics that met and collaborated informally in London from 1952–55. Together they explored a range of concerns, including questioning dominant Modernist thought and the role of waste in popular culture. Their approach was inclusive and multi-disciplinary, and the influences they drew upon were diverse. It is this spirit that guides our approach: We are invested in making collaborative work that is innovative, timely, and has a lasting impact.</p>
     </div>
     <div class="ml2-md ml4-lg">
-      <h2 class="f3">Contact</h2>
+      <h2 class="f3 mb0">Contact</h2>
       <p>2 North Main Street<br>
         Beacon Falls, CT 06403<br>
         +1 347 628 2636
       </p>
       <p>
-        Email &lt;isaac@theindependentgroup.us>  <br>
-        Follow us on instagram &lt;instagram.com/theindependentgroup>
+        Email <a class="link dim white" href="mailto:isaac@theindependentgroup.us">&lt;isaac@theindependentgroup.us> </a> <br>
+        Follow us on instagram <a class="link dim white" href="http://instagram.com/theindependentgroup">&lt;instagram.com/theindependentgroup></a>
       </p>
 
-      <h2 class="f3">Selected Clients</h2>
+      <h2 class="f3 mb0">Selected Clients</h2>
         <ul class="list pa0">
           <li>Bonobos</li>
           <li>Brown University</li>
@@ -108,7 +130,7 @@ image:
           <li>Van Alen Institute</li>
           <li>The Wassaic Project</li>
         </ul>
-      <h2 class="f3">Recognition and Awards</h2>
+      <h2 class="f3 mb0">Recognition and Awards</h2>
       <ul class="list pa0">
         <li>Advertising Age</li>
         <li>American Institute of Graphic Arts</li>

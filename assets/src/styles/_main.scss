@@ -22,20 +22,38 @@ html { font-size: 15px; }
   object-position: 50% 100%;
 }
 
+.s1 { transform: scale(1.1); }
+
 
 .ty--1 { transform: translateY(-100%); }
 .ty--2 { transform: translateY(-200%); }
 
 .h-15 { height: 15%; }
 
-.top-3 { top: 3rem; }
-.right-3 { right: 3rem; }
-.left-3 { left: 3rem; }
+.top-2 { top: 2rem; }
+.bottom-2 { bottom: 2rem; }
+.right-2 { right: 2rem; }
+.left-2 { left: 2rem; }
 
 .hover-box:hover {
   height: initial;
 }
 
+.tracked-mini {
+  letter-spacing: 0.05em;
+}
+
+.btn-center {
+  left: 50%;
+  transform: translateX(-50%);
+  &:hover,
+  &:focus {
+    transform: translateX(-50%) scale(1.05);
+  }
+  &:active {
+    transform: translateX(-50%) scale(.90);
+  }
+}
 
 // modal
 .modal {
@@ -47,6 +65,21 @@ html { font-size: 15px; }
   opacity: 1;
   pointer-events: auto;
 }
+
+//
+.modal-container {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .25s ease;
+}
+.modal-state {
+  display: none;
+}
+.modal-state:checked + .modal-container {
+  opacity: 1;
+  visibility: visible;
+}
+
 
 // swiper
 .swiper-container-horizontal > .swiper-pagination-bullets,
