@@ -38,13 +38,14 @@ image:
                   <div class="grow main-next swiper-button-next child"></div>
                 </div>
                 <!-- hide-on-mobile -->
-                <div class="hover-box ph4 pv3 h10 relative ty--1 bottom-0 left-0 right-0 z-3 hide-child overflow-hidden dn db-sm lh-2">
+                <div class="hover-box ph4 pv3 h15 relative ty--1 bottom-0 left-0 right-0 z-3 hide-child overflow-hidden dn db-sm lh-2">
                   <!-- bg -->
                   <div class="child absolute absolute--fill bg-light-grey"></div>
                   <img class="child vh-100 w-100 blur obj-fit absolute bottom-0 left-0 right-0 s1" src="{{ slide.image }}" />
                   <img class="child vh-100 w-100 blur obj-fit absolute bottom-0 left-0 right-0" src="{{ slide.image }}" />
                   <!-- description -->
-                  <h2 class="mh0 mt0 mb1 f4 fw7 white shadow relative z-1 tracked-mini">{{ slide.title }}</h2>
+                  <h2 class="child-show mh0 mt0 mb1 f4 fw7 white shadow z-1 tracked-mini w-50-sm w-33-md bottom-2 absolute">{{ slide.title }}</h2>
+                  <h2 class="child mh0 mt0 mb1 f4 fw7 white shadow relative z-1 tracked-mini w-50-sm w-33-md">{{ slide.title }}</h2>
                   <p class="child ma0 f4 white shadow w-50-sm w-33-md relative z-1">{{ slide.caption }}</p>
                 </div>
                 <!-- mobile -->
@@ -58,7 +59,7 @@ image:
                     <img class="vh-100 w-100 blur obj-fit absolute bottom-0 left-0 right-0 s1" src="{{ slide.image }}" />
                     <img class="vh-100 w-100 blur obj-fit absolute bottom-0 left-0 right-0" src="{{ slide.image }}" />
                     <!-- description -->
-                    <h2 class="mh0 mt0 mb1 f4 fw7 white shadow relative z-1 tracked-mini">{{ slide.title }}</h2>
+                    <h2 class="mh0 mt0 mb1 f4 fw7 white shadow relative z-1 tracked-mini w-50-sm w-33-md">{{ slide.title }}</h2>
                     <p class="mt0 mb2 f4 white shadow w-50-sm w-33-md relative z-1">{{ slide.caption }}</p>
                     <label for="{{ project.hash }}-{{ forloop.index }}" class="link f4 fw7 white shadow relative z-1 tracked-mini">close</label>
                   </div>

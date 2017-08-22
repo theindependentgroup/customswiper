@@ -55,6 +55,19 @@ html { font-size: 14px; }
   }
 }
 
+.hide-child .child-show {
+  opacity: 1;
+  transition: opacity .15s ease-in;
+}
+.hide-child:hover  .child-show,
+.hide-child:focus  .child-show,
+.hide-child:active .child-show {
+  opacity: 0;
+  transition: opacity .15s ease-in;
+}
+
+
+
 // modal
 .modal {
   opacity: 0;
@@ -92,7 +105,7 @@ html { font-size: 14px; }
 .swiper-button-next.swiper-button-disabled,
 .swiper-button-prev.swiper-button-disabled {
   visibility: hidden;
-  pointer-events: auto;
+  pointer-events: none;
 }
 .swiper-button-prev {
   left: 2rem;
