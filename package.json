@@ -39,9 +39,9 @@
   "name": "boilerplate-for-jekyll",
   "private": true,
   "scripts": {
-    "build": "NODE_ENV=production webpack --progress --colors -p && gulp build --env=production",
-    "start": "NODE_ENV=development webpack --progress --colors -p --watch & gulp server --env=development",
-    "deploy": "NODE_ENV=production webpack --progress --colors -p && gulp build --env=production && gh-pages -d _site",
+    "build": "NODE_ENV=production webpack --progress --colors -p && JEKYLL_ENV=production gulp build --env=production",
+    "start": "NODE_ENV=development webpack --progress --colors -p --watch & JEKYLL_ENV=production gulp server --env=development",
+    "deploy": "NODE_ENV=production webpack --progress --colors -p && JEKYLL_ENV=production gulp build --env=production && gh-pages -d _site",
     "pretest": "gulp lint --env=test",
     "test": "NODE_ENV=test jest",
     "test:watch": "NODE_ENV=test jest --watch"

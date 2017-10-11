@@ -21,8 +21,13 @@ image:
           <div class="swiper-{{ project.hash }} swiper-container absolute absolute--fill">
             <div class="swiper-wrapper">
               {% for slide in project.slides %}
+              {% assign cleanImage = slide.image | remove: "assets/images/" %}
+              {% assign quality = 70 %}
               <div class="swiper-slide">
-                <img class="vh-100 w-100 obj-fit" src="{{ slide.image }}" />
+                <img
+                  class="vh-100 w-100 obj-fit"
+                  src="{{ cleanImage | imgix_url: q: 70 }}"
+                  srcset="{% for width in site.srcset %}{{ cleanImage | imgix_url: w: width, q: quality }} {{ width }}w{% if forloop.last == false %}, {% endif %}{% endfor %}">
                 <!-- arrows -->
                 <div class="absolute top-0 bottom-0 left-0 w-25 z-2 hide-child">
                   <div class="grow swiper-{{ project.hash }}-prev swiper-button-prev child"></div>
@@ -41,8 +46,14 @@ image:
                 <div class="hover-box ph4 pv3 h15 relative ty--1 bottom-0 left-0 right-0 z-3 hide-child overflow-hidden dn db-sm lh-2">
                   <!-- bg -->
                   <div class="child absolute absolute--fill bg-light-grey"></div>
-                  <img class="child vh-100 w-100 blur obj-fit absolute bottom-0 left-0 right-0 s1" src="{{ slide.image }}" />
-                  <img class="child vh-100 w-100 blur obj-fit absolute bottom-0 left-0 right-0" src="{{ slide.image }}" />
+                  <img
+                    class="child vh-100 w-100 blur obj-fit absolute bottom-0 left-0 right-0 s1"
+                    src="{{ cleanImage | imgix_url: q: 70 }}"
+                    srcset="{% for width in site.srcset %}{{ cleanImage | imgix_url: w: width, q: quality }} {{ width }}w{% if forloop.last == false %}, {% endif %}{% endfor %}">
+                  <img
+                    class="child vh-100 w-100 blur obj-fit absolute bottom-0 left-0 right-0"
+                    src="{{ cleanImage | imgix_url: q: 70 }}"
+                    srcset="{% for width in site.srcset %}{{ cleanImage | imgix_url: w: width, q: quality }} {{ width }}w{% if forloop.last == false %}, {% endif %}{% endfor %}">
                   <!-- description -->
                   <h2 class="child-show mh0 mt0 mb1 f4 fw7 white shadow z-1 tracked-mini w-50-sm w-33-md bottom-2 absolute">{{ slide.title }}</h2>
                   <h2 class="child mh0 mt0 mb1 f4 fw7 white shadow relative z-1 tracked-mini w-50-sm w-33-md">{{ slide.title }}</h2>
@@ -56,8 +67,14 @@ image:
                   <div class="ph4 pv3 relative ty--1 bottom-0 left-0 right-0 z-3 overflow-hidden lh-2">
                     <!-- bg -->
                     <div class="absolute absolute--fill bg-light-grey"></div>
-                    <img class="vh-100 w-100 blur obj-fit absolute bottom-0 left-0 right-0 s1" src="{{ slide.image }}" />
-                    <img class="vh-100 w-100 blur obj-fit absolute bottom-0 left-0 right-0" src="{{ slide.image }}" />
+                    <img
+                      class="vh-100 w-100 blur obj-fit absolute bottom-0 left-0 right-0 s1"
+                      src="{{ cleanImage | imgix_url: q: 70 }}"
+                      srcset="{% for width in site.srcset %}{{ cleanImage | imgix_url: w: width, q: quality }} {{ width }}w{% if forloop.last == false %}, {% endif %}{% endfor %}">
+                    <img
+                      class="vh-100 w-100 blur obj-fit absolute bottom-0 left-0 right-0"
+                      src="{{ cleanImage | imgix_url: q: 70 }}"
+                      srcset="{% for width in site.srcset %}{{ cleanImage | imgix_url: w: width, q: quality }} {{ width }}w{% if forloop.last == false %}, {% endif %}{% endfor %}">
                     <!-- description -->
                     <h2 class="mh0 mt0 mb1 f4 fw7 white shadow relative z-1 tracked-mini w-50-sm w-33-md">{{ slide.title }}</h2>
                     <p class="mt0 mb2 f4 white shadow w-50-sm w-33-md relative z-1">{{ slide.caption }}</p>
