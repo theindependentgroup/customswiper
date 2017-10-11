@@ -28,7 +28,6 @@ timezone: America/New_York
 
 ##### imgix #####
 srcset:
-- 480
 - 720
 - 960
 - 1200
