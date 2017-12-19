@@ -23,5 +23,4 @@
 7. `git add .` this will stage all files
 8. `git commit -m 'commit message explaining changes'`-
 9. `git push` sends the code to Github
-10. If you are reading for this code to go live...
-11. `yarn deploy`
+10. If you are ready for this code to go live... `yarn deploy`
