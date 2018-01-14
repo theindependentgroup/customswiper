@@ -21,7 +21,8 @@ image:
           <div class="swiper-{{ project.hash }} swiper-container absolute absolute--fill">
             <div class="swiper-wrapper">
               {% for slide in project.slides %}
-              {% assign cleanImage = slide.image | remove: "assets/images/" %}
+              <!-- {% assign cleanImage = slide.image | remove: "assets/images/" %} -->
+              {% assign cleanImage = slide.image %}
               {% assign quality = 70 %}
               <div class="swiper-slide">
                 <img
