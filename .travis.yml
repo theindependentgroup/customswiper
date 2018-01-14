@@ -4,7 +4,7 @@ rvm:
 before_script:
   - npm install
   - bundle install
-script: bundle exec jekyll build
+script: npm run build
 
 branches:
   except:
