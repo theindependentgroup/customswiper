@@ -1,0 +1,63 @@
+---
+title: The Independent Group
+timezone: America/New_York
+collections:
+  posts:
+    title: Posts
+    output: true
+  projects:
+    title: Projects
+    output: false
+  uploads:
+    title: Uploads
+    output: true
+description: 'The Independent Group (US) is a multidisciplinary design practice that
+  collaborates with a diverse group of individuals, groups, organizations, and commercial
+  clients to create distinctive work that establishes meaningful, lasting connections
+  with their audiences. We are dedicated to forward-thinking initiatives that promote
+  education, sustainability, and positive social impact.
+
+'
+url: 
+twitter:
+  username: 
+logo: 
+social:
+  name: The Independent Group
+  links:
+  - https://www.instagram.com/theindependentgroup/
+  - https://github.com/theindependentgroup
+webmaster_verifications:
+  google: 1234
+  bing: 1234
+  alexa: 1234
+ga_analytics: UA-96203809-1
+srcset:
+- 720
+- 960
+- 1200
+- 1440
+- 1680
+- 1920
+- 2400
+- 2880
+- 3360
+- 3840
+imgix:
+  source: theindependentgroup.imgix.net
+permalink: pretty
+exclude:
+- "*.config"
+- assets/src
+- ".gitignore"
+- Gulpfile.js
+- node_modules
+- package.json
+- README*
+- tools/
+- webpack.config.js
+- vendor
+gems:
+- jekyll-seo-tag
+- jekyll-sitemap
+- jekyll/imgix
