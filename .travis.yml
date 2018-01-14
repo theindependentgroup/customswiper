@@ -2,9 +2,9 @@ language: ruby
 rvm:
   - 2.3.3
 before_script:
-  - yarn install
+  - npm install
   - bundle install
-script: yarn build
+script: npm run build
 
 branches:
   except:
