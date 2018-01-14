@@ -1,0 +1,19 @@
+language: ruby
+rvm:
+  - 2.3.3
+before_script:
+  - yarn install
+  - bundle install
+script: yarn build
+
+branches:
+  except:
+    - gh-pages
+
+# deploy:
+#   provider: pages
+#   skip-cleanup: true
+#   github-token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard, marked secure
+#   keep-history: true
+#   on:
+#     branch: master
